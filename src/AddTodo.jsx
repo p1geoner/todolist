@@ -6,6 +6,7 @@ const AddTodo=({onCreate})=>{
         event.preventDefault()
         if(value.trim()){
             onCreate(value)
+            setValue(' ')
         }
     }
     return(
