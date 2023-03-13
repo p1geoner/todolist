@@ -5,9 +5,133 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: url(./images/background.jpg) fixed;
 }
-
+li{
+  list-style-type: none;
+}
+*{
+  margin: 0;
+  padding: 0;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.done{
+  text-decoration: line-through;
+  color: rgb(122, 122, 122);
+}
+.App{
+  width: 450px;
+  margin: 20px auto;
+  background-color: rgb(255, 255, 255);
+  height: fit-content;
+  border-radius:20px ;
+  overflow: hidden;
+}
+.addTodo{
+  display: flex;
+  flex-direction: column;
+  min-width: 100%;
+  align-items: center;
+}
+.addTodo__btn{
+  cursor: pointer;
+  background-color: rgb(248, 248, 241);
+  border: 1px solid rgb(144, 142, 142);
+  height: 30px;
+  width: 95%;
+  border-radius: 5px;
+}
+.addTodo__btn:hover{
+  background-color: rgb(247, 247, 196);
+}
+.addTodo__btn:active{
+  background-color: rgb(216, 253, 157);
+  
+}
+.addTodo__input{
+  height: 30px;
+  border: 0;
+  width: 95%;
+  font-size: 20px;
+}
+.addTodo__input:focus{
+  border: 0;
+  outline: 0;
+}
+.todolist{
+  margin:30px 0 ;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.todolist li{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+  align-items: center;
+  height: 60px;
+  border: 4px solid rgb(248, 248, 241);
+  box-sizing: border-box;
+  border-radius: 20px;
+}
+.todoitem__index{
+  font-size: 20px;
+}
+.todoitem__btn{
+  font-size: 24px;
+  background-color: red;
+  color: white;
+  height: 30px;
+  width: 30px;
+  border: 0px;
+  cursor: pointer;
+  border-radius: 10px ;
+}
+.todoitem__btn:hover{
+  background-color: rgb(100, 0, 0);
+}
+.todoitem__btn:active{
+  background-color: rgb(34, 1, 1);
+}
+.todoitem__container{
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.todoitem__container p{
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+.app-btns{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 15px 0;
+}
+.app__btn{
+  cursor: pointer;
+  background-color: rgb(248, 248, 241);
+  border: 1px solid rgb(144, 142, 142);
+  height: 30px;
+  width: 200px;
+  border-radius: 5px;
+}
+.app__btn:hover{
+  background-color: rgb(247, 222, 196);
+}
+.app__btn:active{
+  background-color: rgb(255, 0, 0);
+  color: white;
+  
+}
+.app__notodo{
+  font-size: 24px;
+  color: rgb(91, 90, 80);
+  margin: 20px 0;
 }
