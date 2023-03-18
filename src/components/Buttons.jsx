@@ -1,26 +1,24 @@
 import React from "react";
-const Buttons =({setTodo})=>{
-    function clearData ()
-        {
-            const toDo=[];
-            localStorage.setItem('todos', JSON.stringify(toDo));
+const Buttons =({ setTodo })=> {
+    function clearData () {
+            const toDo=[]
+            localStorage.setItem('todos', JSON.stringify(toDo))
             setTodo(toDo);
         }
-    function removeCompletedTodo()
-    {
-        for (let index = 0; index < 5; index++) 
-        {
-            let todos=JSON.parse(window.localStorage.getItem('todos')) ;
-            todos.map((todo,index)=>
-            {
-                if(todo.completed)
-                {
-                    todos.splice(index,1);
+    function removeCompletedTodo() {
+        for (let index = 0; index < 5; index++) {
+            let todos=JSON.parse(window.localStorage.getItem('todos'))
+            
+            todos.map((todo,index)=>{
+                if(todo.completed) {
+                    todos.splice(index,1)
                 }
+
                 return todos;
             }
             )
-            setTodo(todos); 
+
+            setTodo(todos)
             localStorage.setItem('todos', JSON.stringify(todos));
         }  
     }

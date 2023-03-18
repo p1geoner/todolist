@@ -1,8 +1,7 @@
 import React from "react";
-const TodoItem= ({todos,id, onChange, removeTodo})=>{
+const TodoItem= ({ todos,id, onChange, removeTodo })=>{
     const classes = [];
-    if(todos.completed)
-    {
+    if(todos.completed) {
         classes.push('done')
     }
 

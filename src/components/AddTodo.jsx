@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 
-const AddTodo=({onCreate})=>{
+const AddTodo=({ onCreate })=> {
     const[value,setValue]= useState('')
-    function submitHandler(event)
-    {
+
+    function submitHandler(event) {
         event.preventDefault()
-        if(value.trim())
-        {
+
+        if(value.trim()) {
             onCreate(value)
+            
             setValue(' ')
         }
     }
+
     return(
         <form className="addTodo" action="" onSubmit={submitHandler}>
             <input 
