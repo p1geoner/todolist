@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import AddTodo from './components/AddTodo';
 import './App.css';
-import Buttons from './components/Buttons';
 import TodoRender from './components/TodoRender';
+import '../node_modules/font-awesome/css/font-awesome.min.css';
+import Header from './components/Header';
 function App() {
     const [todo, setTodo]=useState(JSON.parse(window.localStorage.getItem('todos')));
 
-    function addTodo(title) {
+    function addTodo(title,date) {
       let todos=JSON.parse(window.localStorage.getItem('todos'))
 
         todos=todos.concat(
@@ -15,6 +16,7 @@ function App() {
               id:Date.now(),
               completed: false,
               title,
+              date,
             }
           ]
         )
@@ -63,14 +65,16 @@ function App() {
 
     return (
       <div className="App">
-        <AddTodo onCreate={addTodo}/>
+        <Header/>
+       
         <TodoRender 
           setTodo={setTodo}
           todo={todo} 
           toggleTodo={toggleTodo} 
           removeTodo={removeTodo}
         />
-        <Buttons setTodo={setTodo} />
+        {/* <Buttons setTodo={setTodo} /> */}
+        <AddTodo onCreate={addTodo}/>
       </div>
     );
 }
