@@ -23,11 +23,18 @@ const TodoItem= ({ todos,id, onChange, removeTodo })=>{
         <li>
             <div className="todoitem">
                 <div className="todoitem__container">
-                    <input 
-                        checked={todos.completed} 
-                        type="checkbox"
-                        onChange={()=>onChange(todos.id)}
-                    />
+                    <label className="">
+                        <input 
+                            className="real-check"
+                            checked={todos.completed} 
+                            type="checkbox"
+                            onChange={()=>onChange(todos.id)}
+                        />
+                        <span className="custom-check"> </span>
+                    </label>
+                    
+                    
+                    
                     <div className="todootem__text-container">
                         <p className={classes.join(' ')}>
                             {todos.title}
